@@ -34,13 +34,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     echo "<script>";
-    echo "function copyContent(button) {";
-    echo "    var text = button.previousSibling.innerHTML;";
-    echo "    navigator.clipboard.writeText(text);";
-    echo "    alert('Контент скопійовано!');";
-    echo "}";
+    echo "function copyContent(button) {
+      var text = button.previousSibling.innerHTML;
+      
+      var tempInput = document.createElement(\"input\");
+      tempInput.style.position = \"absolute\";
+      tempInput.style.left = \"-9999px\";
+      tempInput.value = text;
+      
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand(\"copy\");
+      document.body.removeChild(tempInput);
+    }";
     echo "</script>";
 
     echo "</body>";
     echo "</html>";
 }
+
