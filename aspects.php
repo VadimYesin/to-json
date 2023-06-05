@@ -6,5 +6,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    var_dump($_POST['aspects']);
+    var_dump(json_encode($_POST['aspects']));
 }

@@ -40,6 +40,7 @@
         <?php foreach ($planets as $planet): ?>
             <?php foreach ($aspects as $aspect): ?>
                 <?php foreach ($types as $type): ?>
+                <?php if ($planet === $aspect) { continue; } ?>
                     <h3><?= $planet . ' -> ' . $type . ' -> ' . $aspect ?></h3>
                     <div class="form-group">
                         <label for="title">Title:</label>
