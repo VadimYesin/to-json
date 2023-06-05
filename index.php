@@ -46,3 +46,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "</html>";
 }
 
+require_once './templates/aspects.html';
