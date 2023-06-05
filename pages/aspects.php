@@ -14,8 +14,8 @@
     $aspects = [
         'Sun',
         'Moon',
-        'Mercury',
         'Venus',
+        'Mercury',
         'Mars',
         'Jupiter',
         'Saturn',
