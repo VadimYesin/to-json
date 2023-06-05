@@ -1,4 +1,6 @@
 <?php
+require_once './parts/header.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Отримання даних з форми
     $titles = $_POST['title'];
@@ -17,13 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $encodedDescriptions = encodeNewlines($descriptions);
 
-    echo "<html><script src=\"https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js\"></script>";
-    echo "<head>";
-    echo "<title>Сторінка з виведенням даних</title>";
-    echo "</head>";
-    echo "<body>";
-
-    echo "<h2>Заголовки та описи:</h2>";
+    echo "<h2>Results:</h2>";
 
     for ($i = 0; $i < count($titles); $i++) {
         echo "<p>";
@@ -41,9 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       e.clearSelection();
     });";
     echo "</script>";
-
-    echo "</body>";
-    echo "</html>";
 }
 
-require_once './templates/aspects.html';
+require_once './parts/footer.php';
