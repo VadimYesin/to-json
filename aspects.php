@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         foreach ($planet['Aspects'] as $k_aspect => $aspect) {
             foreach ($aspect as $type => $value) {
                 if (empty($value['Title'])) { continue; }
-                $result[$k_planet]['Aspects'][$k_aspect][$type]['Title'] = encodeDescription(trim($value['Title']));
-                $result[$k_planet]['Aspects'][$k_aspect][$type]['Description'] = encodeDescription(trim($value['Description']));
+                $result[$k_planet]['Aspects'][$k_aspect][$type]['Title'] = encodeDescription($value['Title']);
+                $result[$k_planet]['Aspects'][$k_aspect][$type]['Description'] = encodeDescription($value['Description']);
             }
         }
     }
