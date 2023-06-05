@@ -27,10 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     for ($i = 0; $i < count($titles); $i++) {
         echo "<p>";
-        echo "<strong>Заголовок:</strong> " . $titles[$i] . "<br>";
-        echo "<button class=\"copy-button\" data-clipboard-target=\"#title-$i\">Скопіювати</button>";
-        echo "<strong>Опис:</strong> " . $descriptions[$i] . "<br>";
-        echo "<button class=\"copy-button\" data-clipboard-target=\"#description-$i\">Скопіювати</button>";
+        echo "<strong>Заголовок:</strong><br><div id=\"title-$i\">" . $titles[$i] . "</div><br>";
+        echo "<button class=\"copy-button\" data-clipboard-target=\"#title-$i\">Скопіювати</button></br></br>";
+        echo "<strong>Опис:</strong><br><div id=\"title-$i\">" . $descriptions[$i] . "</div><br>";
+        echo "<button class=\"copy-button\" data-clipboard-target=\"#description-$i\">Скопіювати</button></br></br>";
         echo "</p>";
     }
 
