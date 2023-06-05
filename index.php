@@ -35,15 +35,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     echo "<script>";
     echo "function copyContent(button) {
-      var text = button.previousSibling.innerHTML;
+        var text = button.previousSibling.innerHTML;
 
-      navigator.clipboard.writeText(text)
-        .then(function() {
-          console.log('Контент скопійовано!');
-        })
-        .catch(function(error) {
-          console.log('Не вдалося скопіювати контент: ' + error);
-        });
+        var tempElement = document.createElement(\"textarea\");
+        tempElement.value = text;
+        document.body.appendChild(tempElement);
+        
+        tempElement.select();
+        tempElement.setSelectionRange(0, 99999); // Для підтримки мобільних пристроїв
+        
+        document.execCommand(\"copy\");
+        document.body.removeChild(tempElement);
     }";
     echo "</script>";
 
