@@ -36,16 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "<script>";
     echo "function copyContent(button) {
       var text = button.previousSibling.innerHTML;
-      
-      var tempInput = document.createElement(\"input\");
-      tempInput.style.position = \"absolute\";
-      tempInput.style.left = \"-9999px\";
-      tempInput.value = text;
-      
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      document.execCommand(\"copy\");
-      document.body.removeChild(tempInput);
+
+      navigator.clipboard.writeText(text)
+        .then(function() {
+          console.log('Контент скопійовано!');
+        })
+        .catch(function(error) {
+          console.log('Не вдалося скопіювати контент: ' + error);
+        });
     }";
     echo "</script>";
 
