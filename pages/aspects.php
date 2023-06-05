@@ -1,6 +1,6 @@
 <?php
     $planets = [
-        'Sun',
+        //'Sun',
         'Moon',
         'Mercury',
         'Venus',
@@ -41,7 +41,13 @@
             <?php foreach ($aspects as $aspect): ?>
                 <?php foreach ($types as $type): ?>
                 <?php if ($planet === $aspect) { continue; } ?>
-                    <h3><?= $planet . ' -> ' . $type . ' -> ' . $aspect ?></h3>
+                    <?php if ($aspect === 'First House') : ?>
+                        <h3><?= $planet . ' -> ' . $type . ' -> ' . 'Ascendent' ?></h3>
+                    <?php elseif ($aspect === 'Tenth House') : ?>
+                        <h3><?= $planet . ' -> ' . $type . ' -> ' . 'MC' ?></h3>
+                    <?php else : ?>
+                        <h3><?= $planet . ' -> ' . $type . ' -> ' . $aspect ?></h3>
+                    <?php endif; ?>
                     <div class="form-group">
                         <label for="title">Title:</label>
                         <input type="text" class="form-control" name="aspects[<?=$planet?>][Aspects][<?=$aspect?>][<?=$type?>][Title]" placeholder="Введіть заголовок">
