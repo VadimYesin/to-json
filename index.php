@@ -28,8 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     for ($i = 0; $i < count($titles); $i++) {
         echo "<p>";
         echo "<strong>Заголовок:</strong> " . $titles[$i] . "<br>";
+        echo "<button class=\"copy-button\" data-clipboard-target=\"#title-$i\">Скопіювати</button>";
         echo "<strong>Опис:</strong> " . $descriptions[$i] . "<br>";
-        echo "<button class=\"copy-button\" data-clipboard-target=\"#content-2\">Скопіювати</button>";
+        echo "<button class=\"copy-button\" data-clipboard-target=\"#description-$i\">Скопіювати</button>";
         echo "</p>";
     }
 
@@ -37,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "var clipboard = new ClipboardJS('.copy-button');
 
     clipboard.on('success', function(e) {
-      alert('Контент скопійовано!');
       e.clearSelection();
     });";
     echo "</script>";
