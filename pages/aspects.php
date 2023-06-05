@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description:</label>
-                        <input type="text" class="form-control" name="aspects[<?=$planet?>][Aspects][<?=$aspect?>][<?=$type?>][Description]" placeholder="Введіть опис">
+                        <textarea class="form-control" name="aspects[<?=$planet?>][Aspects][<?=$aspect?>][<?=$type?>][Description]" placeholder="Введіть опис"></textarea>
                     </div>
                 <?php endforeach; ?>
             <?php endforeach; ?>
