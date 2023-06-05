@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $encodedDescriptions = encodeNewlines($descriptions);
 
-    echo "<html>";
+    echo "<html><script src=\"https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js\"></script>";
     echo "<head>";
     echo "<title>Сторінка з виведенням даних</title>";
     echo "</head>";
@@ -29,24 +29,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<p>";
         echo "<strong>Заголовок:</strong> " . $titles[$i] . "<br>";
         echo "<strong>Опис:</strong> " . $descriptions[$i] . "<br>";
-        echo "<button onclick=\"copyContent(this)\">Скопіювати контент</button>";
+        echo "<button class=\"copy-button\" data-clipboard-target=\"#content-2\">Скопіювати</button>";
         echo "</p>";
     }
 
     echo "<script>";
-    echo "function copyContent(button) {
-        var text = button.previousSibling.innerHTML;
+    echo "var clipboard = new ClipboardJS('.copy-button');
 
-        var tempElement = document.createElement(\"textarea\");
-        tempElement.value = text;
-        document.body.appendChild(tempElement);
-        
-        tempElement.select();
-        tempElement.setSelectionRange(0, 99999); // Для підтримки мобільних пристроїв
-        
-        document.execCommand(\"copy\");
-        document.body.removeChild(tempElement);
-    }";
+    clipboard.on('success', function(e) {
+      alert('Контент скопійовано!');
+      e.clearSelection();
+    });";
     echo "</script>";
 
     echo "</body>";
