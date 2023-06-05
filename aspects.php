@@ -17,5 +17,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
-    var_dump(json_encode($result));
+    var_dump(json_encode($result, JSON_UNESCAPED_UNICODE));
 }
