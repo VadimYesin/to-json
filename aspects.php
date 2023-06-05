@@ -1,4 +1,5 @@
 <?php
+ini_set('post_max_size', '32M');
 require_once './parts/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
