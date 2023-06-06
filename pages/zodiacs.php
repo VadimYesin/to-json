@@ -28,7 +28,7 @@ $zodiacs = [
 ?>
 
 <div class="container">
-    <h1>Aspects:</h1>
+    <h1>Zodiacs:</h1>
     <form action="/zodiacs.php" method="POST">
         <?php foreach ($planets as $planet) : ?>
             <?php foreach ($zodiacs as $k_zodiac => $zodiac) : ?>

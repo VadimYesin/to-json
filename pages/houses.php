@@ -28,7 +28,7 @@ $houses = [
 ?>
 
 <div class="container">
-    <h1>Aspects:</h1>
+    <h1>Houses:</h1>
     <form action="/zodiacs.php" method="POST">
         <?php foreach ($planets as $planet) : ?>
             <?php foreach ($houses as $house) : ?>
