@@ -1,6 +1,6 @@
 <?php
     $planets = [
-        //'Sun',
+        'Sun',
         'Moon',
         'Mercury',
         'Venus',
