@@ -38,8 +38,8 @@
     <h1>Aspects:</h1>
     <form action="/aspects.php" method="POST">
         <?php foreach ($planets as $planet) : ?>
-            <?php foreach ($types as $type) : ?>
-                <?php foreach ($aspects as $aspect) : ?>
+            <?php foreach ($aspects as $aspect) : ?>
+                <?php foreach ($types as $type) : ?>
                 <?php //if ($planet === $aspect) { continue; } ?>
                     <?php if ($aspect === 'First House') : ?>
                         <h3><?= $planet . ' -> ' . $type . ' -> ' . 'Ascendent' ?></h3>
