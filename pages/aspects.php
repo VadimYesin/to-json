@@ -40,7 +40,7 @@
         <?php foreach ($planets as $planet) : ?>
             <?php foreach ($types as $type) : ?>
                 <?php foreach ($aspects as $aspect) : ?>
-                <?php if ($planet === $aspect) { continue; } ?>
+                <?php //if ($planet === $aspect) { continue; } ?>
                     <?php if ($aspect === 'First House') : ?>
                         <h3><?= $planet . ' -> ' . $type . ' -> ' . 'Ascendent' ?></h3>
                     <?php elseif ($aspect === 'Tenth House') : ?>
